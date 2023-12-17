@@ -1,0 +1,84 @@
+/*Style dashboard conteúdo da Direita/Right*/
+.content-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.content-breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+
+.breadcrumb {
+  list-style: none;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  /* display: flex;
+  gap: 10px; */
+}
+
+.breadcrumb li {
+  display: inline; /*um ao lado do outro*/
+  font-size: 16px;
+}
+
+.breadcrumb li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #71717a;
+}
+
+/*Se ele for o ultimo elemento(last-child)*/
+.breadcrumb li:last-child {
+  color: #4658ac;
+}
+
+/*Not -> não for o ultimo elemento*/
+.breadcrumb li:not(:last-child)::after {
+  content: " > ";
+  color: #a1a1aa;
+}
+
+.module-container {
+  background-color: #4558ac10;
+  width: 100%;
+  height: 100vh;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+
+.title-module {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.menu-module ul {
+  display: flex;
+  padding: 0 20px;
+}
+
+.menu-module ul li {
+  list-style: none; /*Tira a estilização de lista*/
+  margin-right: 10px;
+  color: #71717a;
+  cursor: pointer;
+}
+
+.menu-module ul li.item-module-active {
+  color: #4256d0;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #4256d0;
+}
+
+.content-module {
+  background-color: #fff;
+  border-radius: 12px;
+  height: 300px;
+}
