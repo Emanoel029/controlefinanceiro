@@ -49,11 +49,11 @@
   width: 100%;
   padding: 0 10px;
   /* box-sizing: border-box; */
-  display: none; /*Escondi os elementos*/
+  display: none; /*Escondi os elementos, eles aparencem no JS*/
 }
 
 .menu-dashboard ul li {
-  list-style: none;
+  list-style: none; /*Esconde as bolinhas da lista*/
   padding: 8px;
   cursor: pointer;
 }
