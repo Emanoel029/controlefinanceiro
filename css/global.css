@@ -1,0 +1,25 @@
+/*Configurações global/geral*/
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+.img {
+  max-width: 100%;
+}
+
+/*Todos os placeholder*/
+::placeholder {
+  font-size: 14px;
+  color: #9fa6b2;
+}
+
+/*Deixa tudo no centro
+.container {
+  max-width: 1400px;
+  padding: 0px 20px;
+  margin: 10px auto;
+}
+*/

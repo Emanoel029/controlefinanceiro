@@ -1,0 +1,75 @@
+.container-login {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column; /*um abaixo do outro*/
+  position: absolute;
+  top: 50%;
+  left: 50%; /*O top, left e transform deixa a tela no centro*/
+  transform: translate(-50%, -50%);
+}
+
+.header-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-login {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.form-login {
+  width: 100%; /*Pega 100% do container-login */
+}
+
+.group-input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.group-input label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.fort-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-login {
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box; /*Pq colocou um padding se n o elemento ocupa mais q o tamnho do input*/
+  font-size: 14px;
+  color: #9fa6b2;
+}
+
+.input-login:focus {
+  border: 1px solid #5c73db;
+  outline: none; /*Tem que colocar para tirar o padrão q o navegador coloca se n funciona*/
+}
+
+.forgot-password {
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-form-login {
+  background-color: #4763e4;
+  color: #fff;
+  width: 100%;
+  border: none; /*Sem borda padrão de navegador*/
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box; /*para n aumentar o tamanho*/
+  font-size: 18px;
+  cursor: pointer;
+}

@@ -1,0 +1,64 @@
+#dashboard {
+  display: flex;
+}
+
+.menu-bar {
+  background: linear-gradient(
+      to top,
+      rgba(19, 28, 85, 0.0760679271708683) 0%,
+      rgba(19, 28, 85, 0.5158438375350141) 35%,
+      rgba(19, 28, 85, 1) 100%
+    ),
+    url("../assets/bg-sidebar.png") no-repeat center;
+  width: 250px;
+  height: 100vh; /*100% do q o usuário tiver de visualização na tela*/
+  color: #fff;
+}
+
+.header-bar {
+  background: #0e1b6b;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.content-intern-menu {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.option-meu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-menu {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-dashboard ul {
+  width: 100%;
+  padding: 0 10px;
+  /* box-sizing: border-box; */
+  display: none; /*Escondi os elementos*/
+}
+
+.menu-dashboard ul li {
+  list-style: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.menu-dashboard ul li:hover {
+  background-color: #4256d0;
+  border-radius: 12px;
+}
