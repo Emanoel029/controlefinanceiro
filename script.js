@@ -1,3 +1,20 @@
+//Esconder senha e mostrar senha de login
+const inputPassword = document.getElementById("password");
+const btnShowPassword = document.getElementById("show-password");
+const btnHidePassord = document.getElementById("hide-password");
+
+btnShowPassword?.addEventListener("click", () => {
+  inputPassword.setAttribute("type", "text");
+  btnShowPassword.style.display = "none";
+  btnHidePassord.style.display = "block";
+});
+
+btnHidePassord?.addEventListener("click", () => {
+  inputPassword.setAttribute("type", "password");
+  btnHidePassord.style.display = "none";
+  btnShowPassword.style.display = "block";
+});
+
 //rotação do meu
 const toggleMenuButton = document.querySelector(".toggle-menu");
 const menuListe = document.querySelector(".menu-dashboard ul");
@@ -5,7 +22,7 @@ const icon = toggleMenuButton;
 
 let isNotClicked = false;
 
-toggleMenuButton.addEventListener("click", () => {
+toggleMenuButton?.addEventListener("click", () => {
   if (isNotClicked) {
     menuListe.style.display = "none";
     icon.style.transform = "rotate(0deg)";
@@ -17,7 +34,7 @@ toggleMenuButton.addEventListener("click", () => {
   isNotClicked = !isNotClicked; //se a variável era true, vira false e vice versa
 });
 
-//mudando de cor quando troca os setor
+//mudando de cor quando troca os setor (dashboardLeft.css)
 const itensModules = document.querySelectorAll(".menu-module ul li");
 
 itensModules.forEach((item) => {

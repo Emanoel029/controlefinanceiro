@@ -11,8 +11,8 @@
       rgba(19, 28, 85, 0.5158438375350141) 35%,
       rgba(19, 28, 85, 1) 100%
     ),
-    url("../assets/bg-sidebar.png") no-repeat center;
-  width: 250px;
+    url("../assets/bg-sidebar.png") repeat center;
+  width: 350px;
   height: 100vh; /*100% do q o usuário tiver de visualização na tela*/
   color: #fff;
 }
@@ -63,4 +63,25 @@
 .menu-dashboard ul li:hover {
   background-color: #4256d0;
   border-radius: 12px;
+}
+
+.info-user-logged {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed; /*fixado*/
+  bottom: 10px;
+}
+
+.info-user {
+  display: flex;
+  flex-direction: column;
+}
+
+/*first-child (primeiro elemento span)*/
+.info-user span:first-child {
+  font-weight: bold;
 }

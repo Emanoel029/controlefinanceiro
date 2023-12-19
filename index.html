@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>Controle financeiro</title>
 </head>
@@ -24,15 +25,18 @@
           <label for="email">E-mail</label>
           <input type="email" name="email" id="email" class="input-login" placeholder="Seu e-mail">
         </div>
-        <div class="group-input">
+        <div class="group-input input-password">
           <label for="senha">Senha</label>
           <input type="password" name="password" id="password" class="input-login" placeholder="*******">
+          <i id="hide-password" class="bi bi-eye"></i>
+          <i id="show-password" class="bi bi-eye-slash"></i>
         </div>
         <p class="forgot-password">Esqueceu a senha?</p>
         <input type="submit" value="Entrar" class="submit-form-login">
       </form>
     </div>
   </section>
+  <script src="script.js"></script>
 </body>
 
 </html>

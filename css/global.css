@@ -4,6 +4,7 @@ body {
   font-family: "Inter", sans-serif;
   margin: 0px;
   padding: 0px;
+  overflow: hidden; /*para não ter scrool na pg*/
 }
 
 .img {
