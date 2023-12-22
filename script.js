@@ -49,3 +49,48 @@ itensModules.forEach((item) => {
     }
   });
 });
+
+function setupModal(btnOpen, modal, btnClose, btnCancel) {
+  const openBtn = document.getElementById(btnOpen);
+  const modalElement = document.querySelector(modal);
+  const closeBtn = document.querySelector(btnClose);
+  const cancelBtn = document.querySelector(btnCancel);
+
+  openBtn?.addEventListener("click", () => {
+    modalElement.style.display = "flex";
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    modalElement.style.display = "none";
+  });
+
+  cancelBtn?.addEventListener("click", () => {
+    modalElement.style.display = "none";
+  });
+}
+
+// Expenses (modal)
+
+setupModal(
+  "add-new-expense",
+  ".modal-add-expenses",
+  ".close-modal-add-expense"
+);
+
+setupModal(
+  "delete-expenses-action",
+  ".modal-delete-expense",
+  ".close-modal-delete-expense",
+  ".cancel-delete-expense"
+);
+
+//Incomes
+
+setupModal("add-new-income", ".modal-add-incomes", ".close-modal-add-income");
+
+setupModal(
+  "delete-incomes-action",
+  ".modal-delete-income",
+  ".close-modal-delete-icome",
+  ".cancel-delete-income"
+);

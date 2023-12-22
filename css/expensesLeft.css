@@ -60,6 +60,11 @@
   cursor: pointer;
 }
 
+.menu-dashboard ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .menu-dashboard ul li:hover {
   background-color: #4256d0;
   border-radius: 12px;

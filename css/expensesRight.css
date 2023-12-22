@@ -107,6 +107,7 @@
   box-sizing: border-box;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
 }
 
 .add-button span {
@@ -143,4 +144,106 @@
   font-weight: bold;
 }
 
-/*31:39*/
+.values-items {
+  border-collapse: collapse; /*p a borda ser contínua*/
+}
+
+.values-items thead {
+  text-align: left;
+  color: #a1a1aa;
+}
+
+.values-items thead tr th {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 0;
+}
+
+.values-items tbody tr td {
+  padding: 10px 0;
+  border-bottom: 1px solid #f4f4f5;
+}
+
+.paid-status {
+  background-color: #dcfce7;
+  color: #166534;
+  width: 100px;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.pending-status {
+  background-color: #fee2e2;
+  color: #991b1b;
+  width: 100px;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.pending-payment {
+  background-color: #dc2626;
+  color: #fff;
+  width: 100px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.actions-table {
+  display: flex;
+  gap: 5px;
+}
+
+.content-delete,
+.content-edit {
+  position: relative;
+}
+
+.delete-icon {
+  color: #dc2626;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.content-delete .hover-delete,
+.content-edit .hover-edit {
+  display: none;
+}
+
+/*Quando passar o mouse no icon da lixeira*/
+.content-delete:hover .hover-delete {
+  display: flex;
+  top: 0px;
+  left: -80px;
+  position: absolute;
+  background-color: #dc2626;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.edit-icon {
+  color: #5c73db;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/*Quando passar o mouse no icon do lapis*/
+.content-edit:hover .hover-edit {
+  display: flex;
+  top: 0px;
+  right: -80px;
+  position: absolute;
+  background-color: #5c73db;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+}

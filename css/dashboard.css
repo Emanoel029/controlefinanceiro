@@ -1,0 +1,20 @@
+.container-info-total-values {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.card-info-total-values {
+  background-color: #0e1b6b;
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

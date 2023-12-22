@@ -1,0 +1,54 @@
+.modal-add-expenses,
+.modal-delete-expense,
+.modal-add-incomes,
+.modal-delete-income {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #00000080;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  display: none;
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 500px;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.close-modal-add-expense,
+.close-modal-delete-expense,
+.close-modal-add-income,
+.close-modal-delete-icome {
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.cancel-button {
+  background-color: #fff;
+  color: #4763e4;
+  border: 1px solid #4763e4;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #dc2626;
+  color: #fff;
+  border: 1px solid #dc2626;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
