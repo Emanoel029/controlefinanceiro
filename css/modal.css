@@ -1,7 +1,9 @@
 .modal-add-expenses,
 .modal-delete-expense,
 .modal-add-incomes,
-.modal-delete-income {
+.modal-delete-income,
+.modal-add-users,
+.modal-delete-user {
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +28,9 @@
 .close-modal-add-expense,
 .close-modal-delete-expense,
 .close-modal-add-income,
-.close-modal-delete-icome {
+.close-modal-delete-icome,
+.close-modal-add-user,
+.close-modal-delete-user {
   font-size: 24px;
   color: #000;
   cursor: pointer;

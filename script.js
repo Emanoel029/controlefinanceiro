@@ -87,10 +87,18 @@ setupModal(
 //Incomes
 
 setupModal("add-new-income", ".modal-add-incomes", ".close-modal-add-income");
-
 setupModal(
   "delete-incomes-action",
   ".modal-delete-income",
   ".close-modal-delete-icome",
   ".cancel-delete-income"
+);
+
+//Users
+setupModal("add-new-user", ".modal-add-users", ".close-modal-add-user");
+setupModal(
+  "delete-users-action",
+  ".modal-delete-user",
+  ".close-modal-delete-user",
+  ".cancel-delete-user"
 );
