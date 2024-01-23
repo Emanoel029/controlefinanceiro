@@ -3,6 +3,7 @@
 .modal-add-incomes,
 .modal-delete-income,
 .modal-add-users,
+.modal-edit-users,
 .modal-delete-user {
   position: fixed;
   top: 0;
@@ -30,6 +31,7 @@
 .close-modal-add-income,
 .close-modal-delete-icome,
 .close-modal-add-user,
+.close-modal-edit-user,
 .close-modal-delete-user {
   font-size: 24px;
   color: #000;

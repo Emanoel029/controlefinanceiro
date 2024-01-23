@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>Controle financeiro</title>
 </head>
@@ -17,9 +18,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2>Cadastrar usuário</h2>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x close-modal-add-user" viewBox="0 0 16 16">
-          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-        </svg>
+        <i class="bi bi-x close-modal-add-user"></i>
       </div>
       <form class="form-add-users" action="">
         <div class="group-input">
@@ -38,6 +37,36 @@
       </form>
     </div>
   </div>
+
+
+  <div class="modal-edit-users">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Editar usuário</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x close-modal-edit-user" viewBox="0 0 16 16">
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+        </svg>
+      </div>
+      <form class="form-edit-users" action="">
+        <div class="group-input">
+          <label>Nome</label>
+          <input type="text" name="name" id="name-user-edit" class="input-login" placeholder="Digite o nome da usuário">
+        </div>
+        <div class="group-input">
+          <label>Email</label>
+          <input type="email" name="email" id="email-user-edit" class="input-login" placeholder="Digite o e-mail do usuário">
+        </div>
+        <div class="group-input">
+          <label>Senha</label>
+          <input type="password" id="password-user-edit" class="input-login" placeholder="Digite a senha do usuário">
+        </div>
+        <input type="submit" value="Editar" class="submit-form-login">
+      </form>
+    </div>
+  </div>
+
+
+
   <div class="modal-delete-user">
     <div class="modal-content">
       <div class="modal-header">
@@ -118,61 +147,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Fulano de tal</td>
-                <td>teste@hotmail.com</td>
-                <td>
-                  <div class="actions-table">
-                    <div class="content-delete">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash delete-icon" id="delete-users-action" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
-                      </svg>
-                      <span class="hover-delete">Deletar</span>
-                    </div>
 
-                    <div class="content-edit">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill edit-icon" id="edit-users-action" viewBox="0 0 16 16">
-                        <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
-                        <!--<i class="bi bi-pencil-fill"></i>-->
-                      </svg>
-                      <span class="hover-edit">editar</span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-
-              <tr>
-                <td>Ciclano de tal</td>
-                <td>contato@hotmail.com</td>
-                <td>
-                  <div class="actions-table">
-                    <div class="content-delete">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash delete-icon" id="delete-users-action" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
-                        <!--<i class="bi bi-trash"></i>-->
-                      </svg>
-                      <span class="hover-delete">Deletar</span>
-                    </div>
-
-                    <div class="content-edit">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill edit-icon" id="edit-users-action" viewBox="0 0 16 16">
-                        <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
-                        <!--<i class="bi bi-pencil-fill"></i>-->
-                      </svg>
-                      <span class="hover-edit">editar</span>
-                    </div>
-                  </div>
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </section>
-  <script src="script.js"></script>
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/user-script.js"></script>
 </body>
 
 </html>
