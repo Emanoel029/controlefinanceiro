@@ -102,3 +102,10 @@ setupModal(
   ".close-modal-delete-user",
   ".cancel-delete-user"
 );
+
+setupModal(
+  "edit-users-action",
+  ".modal-edit-users",
+  ".close-modal-edit-user",
+  ".cancel-edit-user"
+);

@@ -92,8 +92,7 @@ function updateTable(data) {
 
     let deleteDiv = document.createElement("div");
     deleteDiv.classList.add("content-delete");
-    let deleteIcon = document.createElement("svg");
-
+    let deleteIcon = document.createElement("i");
     deleteIcon.classList.add("bi", "bi-trash", "delete-icon");
     deleteIcon.setAttribute("delete-item-id", user.id);
     deleteIcon.id = "delete-users-action";
@@ -106,7 +105,7 @@ function updateTable(data) {
 
     let editDiv = document.createElement("div");
     editDiv.classList.add("content-edit");
-    let editIcon = document.createElement("svg");
+    let editIcon = document.createElement("i");
     editIcon.classList.add("bi", "bi-pencil-fill", "edit-icon");
     editIcon.setAttribute("edit-item-id", user.id);
     editIcon.id = "edit-users-action";
@@ -201,33 +200,6 @@ document.addEventListener("click", function (event) {
       }
     } else {
       console.error("Linha da tabela não foi encontrada.");
-    }
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function (event) {
-  if (event.target.id === "edit-users-action") {
-    const userId = event.target.getAttribute("edit-item-id");
-    localStorage.setItem("userId", userId);
-
-    const row = event.target.closest("tr");
-    if (row) {
-      const cells = row.getElementsByTagName("td");
-
-      if (cells.length > 0) {
-        const name = cells[0].textContent;
-        const email = cells[1].textContent;
-        const password = cells[2].textContent;
-
-        const modalEditUsers = document.querySelector(".modal-edit-users");
-        modalEditUsers.style.display = "flex";
-
-        document.getElementById("name-user-edit").value = name;
-        document.getElementById("email-user-edit").value = email;
-        document.getElementById("password-user-edit").value = password;
-      }
-    } else {
-      console.error("Linha da tabela não foi encontrada");
     }
   }
 });
