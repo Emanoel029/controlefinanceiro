@@ -30,6 +30,42 @@ async function createUser(userData) {
   }
 }
 
+async function deleteUser(userId) {
+  const deleteApiUrl = `${apiUrl}/${encodeURIComponent(userId)}`;
+  try {
+    const response = await fetch(deleteApiUrl, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      throw new Error("Algo deu errado");
+    }
+    localStorage.removeItem("userId");
+    fetchData();
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function editUser(userId, updateUserData) {
+  const updateApiUrl = `${apiUrl}/${encodeURIComponent(userId)}`;
+
+  try {
+    const response = await fetch(updateApiUrl, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updateUserData),
+    });
+    const data = await response.json();
+    console.log("Resposta da api de atualização", data);
+    localStorage.removeItem("userId");
+    fetchData();
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 function updateTable(data) {
   let tbody = document.querySelector(".values-items tbody");
   tbody.innerHTML = "";
@@ -117,5 +153,106 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const modalAddUsers = document.querySelector(".modal-add-users");
     modalAddUsers.style.display = "none";
+  });
+});
+
+document.addEventListener("click", function (event) {
+  if (event.target.id === "delete-users-action") {
+    const userId = event.target.getAttribute("delete-item-id");
+    localStorage.setItem("userId", userId);
+
+    let modalDelete = document.querySelector(".modal-delete-user");
+    modalDelete.style.display = "flex";
+  }
+});
+
+let confirmDeleteButton = document.querySelector(".confirm-delete-user");
+confirmDeleteButton.addEventListener("click", async function () {
+  let userId = localStorage.getItem("userId");
+
+  if (userId) {
+    await deleteUser(userId);
+  }
+
+  let modalDelete = document.querySelector("modal-delete-user");
+  modalDelete.style.display = "none";
+});
+
+document.addEventListener("click", function (event) {
+  if (event.target.id === "edit-users-action") {
+    const userId = event.target.getAttribute("edit-item-id");
+    localStorage.setItem("userId", userId);
+
+    const row = event.target.closest("tr");
+    if (row) {
+      const cells = row.getElementsByTagName("td");
+
+      if (cells.length > 0) {
+        const name = cells[0].textContent;
+        const email = cells[1].textContent;
+        const password = cells[2].textContent;
+
+        const modalEditUsers = document.querySelector(".modal-edit-users");
+        modalEditUsers.style.display = "flex";
+
+        document.getElementById("name-user-edit").value = name;
+        document.getElementById("email-user-edit").value = email;
+        document.getElementById("password-user-edit").value = password;
+      }
+    } else {
+      console.error("Linha da tabela não foi encontrada.");
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  if (event.target.id === "edit-users-action") {
+    const userId = event.target.getAttribute("edit-item-id");
+    localStorage.setItem("userId", userId);
+
+    const row = event.target.closest("tr");
+    if (row) {
+      const cells = row.getElementsByTagName("td");
+
+      if (cells.length > 0) {
+        const name = cells[0].textContent;
+        const email = cells[1].textContent;
+        const password = cells[2].textContent;
+
+        const modalEditUsers = document.querySelector(".modal-edit-users");
+        modalEditUsers.style.display = "flex";
+
+        document.getElementById("name-user-edit").value = name;
+        document.getElementById("email-user-edit").value = email;
+        document.getElementById("password-user-edit").value = password;
+      }
+    } else {
+      console.error("Linha da tabela não foi encontrada");
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const formEditUser = document.querySelector(".form-edit-users");
+  formEditUser.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name-user-edit").value;
+    const email = document.getElementById("email-user-edit").value;
+    const password = document.getElementById("password-user-edit").value;
+
+    const updateUserData = {
+      name,
+      email,
+      password,
+    };
+
+    const userId = localStorage.getItem("userId");
+
+    if (userId) {
+      await editUser(userId, updateUserData);
+    }
+    const modalEditUsers = document.querySelector(".modal-edit-users");
+    modalEditUsers.style.display = "none";
   });
 });
